@@ -1,0 +1,139 @@
+/* Reset & Global */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0; width: 100%;
+  overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #b1a795; color: #333;
+  padding-top: 130px; /* offset for fixed nav */
+}
+
+/* Header */
+.logo-nav {
+  position: fixed; top: 0; left: 0; width: 100%;
+  background-color: rgb(95, 16, 16);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 15px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.logo-container { display: flex; align-items: center; }
+.logo { width: 60px; margin-right: 15px; }
+.restaurant-name { font-size: 24px; font-weight: bold; color: #fff; }
+
+/* Navigation */
+nav ul {
+  list-style: none; display: flex; margin: 0; padding: 0;
+}
+nav ul li { margin: 0 10px; }
+nav ul li a {
+  color: white; text-decoration: none; font-weight: bold;
+  white-space: nowrap;
+}
+nav ul li a:hover { text-decoration: underline; }
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; font-size: 28px; color: white; cursor: pointer;
+}
+@media (max-width: 768px) {
+  nav ul { display: none; flex-direction: column; background: rgb(95,16,16); width: 100%; }
+  nav ul.show { display: flex; }
+  .hamburger { display: block; }
+}
+
+/* Hero Sections */
+.hero {
+  min-height: 70vh; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  color: #fff; text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+  padding: 20px;
+}
+.hero-home, .hero-about, .hero-reservation, .hero-gallery, .hero-contact {
+  background: url('images/hero.png') no-repeat center/cover;
+}
+
+/* Translucent Tile for Hero Text */
+.hero-content {
+  background: rgba(0, 0, 0, 0.5); /* translucent black tile */
+  padding: 30px;
+  border-radius: 10px;
+  display: inline-block;
+}
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  animation: fadeInUp 1s ease forwards;
+}
+.hero-content p {
+  font-size: 22px;
+  margin-bottom: 25px;
+  animation: fadeInUp 1s ease forwards;
+}
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+.hero-buttons button {
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Buttons */
+button {
+  background: red; color: #fff; padding: 12px 30px;
+  font-size: 18px; border: none; border-radius: 50px;
+  cursor: pointer; margin: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+button:hover { background: darkred; transform: scale(1.05); }
+
+/* Sections */
+section {
+  text-align: center; max-width: 1000px; margin: 0 auto; padding: 40px 20px;
+}
+
+/* Food Showcase, Gallery, Menu */
+.food-gallery, .gallery, .menu-gallery {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;
+}
+.food-item { text-align: center; }
+.food-item p { margin-top: 10px; font-weight: bold; color: #333; }
+
+.food-gallery img, .gallery img, .menu-gallery img {
+  width: 250px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+.menu-gallery img { width: 300px; }
+.food-gallery img:hover, .gallery img:hover, .menu-gallery img:hover { transform: scale(1.05); }
+
+/* Contact Page */
+.contact-info h2, .map-section h2 { color: rgb(133, 30, 30); margin-bottom: 15px; }
+.contact-info p { font-size: 18px; margin: 8px 0; background: rgba(10, 10, 10, 0.5); }
+.map-section iframe {
+  width: 100%; max-width: 1000px; height: 350px;
+  border: none; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+.form {
+  color: rgb(133, 30, 30); margin-bottom: 20px; background: rgba(10, 10, 10, 0.5);
+  padding: 10px; border-radius: 8px;
+}
+
+/* Footer */
+footer { background: rgb(79, 12, 12); color: white; text-align: center; padding: 15px; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .restaurant-name { font-size: 20px; }
+  .hero-content h1 { font-size: 32px; }
+  .hero-content p { font-size: 18px; }
+  .food-gallery img, .gallery img, .menu-gallery img {
+    width: 100%; max-width: 300px;
+  }
+}
